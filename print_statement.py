@@ -1,0 +1,7 @@
+print("Hello world", 7)
+print(5)
+print("Bye")
+print(38*23)
+print(90+32)
+print(343/94)
+print(3843-89)
