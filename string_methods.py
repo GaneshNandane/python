@@ -1,274 +1,460 @@
-# strings are imutable means that the strings are not get changed after creation of the strings
+# ---------------------------------------------------------------------------------------------------
+# STRINGS IN PYTHON
+# ---------------------------------------------------------------------------------------------------
+# Strings are immutable in Python.
+# This means once a string object is created, its value cannot be changed.
+# Any string method that seems to modify a string actually returns a NEW string.
+# The original string always remains unchanged in memory.
 
-message = "This is the message to everyone that the begining is the key to success"
+message = "This is the message to everyone that the beginning is the key to success"
 
-# strings have different methods to manipulate them and use them viselly
-
+# ---------------------------------------------------------------------------------------------------
 # 1. capitalize()
-# first letter of the whole string gets capitalize
-x = message.capitalize()
-print (x)
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.capitalize()
+# This method returns a new string where:
+# - The first character of the entire string is converted to uppercase (if it is a letter).
+# - All remaining characters are converted to lowercase.
+# It does NOT modify the original string.
 
+x = message.capitalize()
+print(x)
+
+
+# ---------------------------------------------------------------------------------------------------
 # 2. casefold()
-# converts string to the lowercase aggressively means that it works in different languages 
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.casefold()
+# This method converts the string to lowercase in a more aggressive way than lower().
+# It is designed for caseless string comparison across different languages.
+# For example, certain special characters in German are handled better with casefold().
+
 x = message.casefold()
 print(x)
 
+
+# ---------------------------------------------------------------------------------------------------
 # 3. center()
-  # syntax
-    # string.center(width, fillchar)
-# used to center the string with the different parameters of width and fillchar note that the width is get substacted from the actual length of the string and then the output get distributed into two parts and both gets added to left and right
-x = message.center(20)
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.center(width, fillchar)
+# - width: Total length of the resulting string.
+# - fillchar (optional): Character used to fill padding (default is space).
+# If width is greater than the string length:
+#     Padding is added equally on both sides.
+# If width is less than or equal to string length:
+#     Original string is returned unchanged.
+
+x = message.center(120, "-")
 print(x)
 
+
+# ---------------------------------------------------------------------------------------------------
 # 4. count()
-  # syntax
-    # string.count(substring, start, end)
-# returns the number of times a similar text gets appear in the string with parameters of start and end where start means that the it starts from this index same as the end where end index gets specified it finds  till that specified index
-x = message.count("apple")
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.count(substring, start, end)
+# Returns the number of non-overlapping occurrences of substring in the string.
+# Optional start and end parameters restrict the search range.
+# Returns 0 if substring is not found (does NOT raise error).
+
+x = message.count("the")
 print(x)
 
+
+# ---------------------------------------------------------------------------------------------------
 # 5. encode()
-  # syntax
-    # string.encode(encoding="utf-8", errors="strict")
-# converts a string (text) into bytes using a specific encoding format
-x = message.encode()
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.encode(encoding="utf-8", errors="strict")
+# Converts the string into bytes using specified encoding.
+# Useful when writing text to files or sending data over networks.
+
+x = message.encode("utf-8")
 print(x)
 
+
+# ---------------------------------------------------------------------------------------------------
 # 6. endswith()
-  # syntax
-    # string.endswith(suffix, start, end)
-# finds if the specific text ends with a specific symbol or a specific text with a range with two parameters of start and end index
-x = message.endswith(".")
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.endswith(suffix, start, end)
+# Returns True if string ends with specified suffix.
+# Optional start and end restrict the checking range.
+# Returns Boolean only (never raises error).
+
+x = message.endswith("success")
 print(x)
 
+
+# ---------------------------------------------------------------------------------------------------
 # 7. expandtabs()
-  # syntax
-    # string.expandtabs(tabsize)
-# here expantabs method does is to expand the tab space to cirtain conditions with the default being 8 spaces that means if our text has two characters then the tabsize of 6 gets added that is 8-2 = 6 where two is the actual text size and their is a one problem what if our text is larger that 8 text characters then their comes the one anoter case that the next tab space is the multiple of 8 means that 16- our text size and outputed results number tab gets included it has custom tab size also if we do not like default 8 space tab we can set to our need
-x =  message.expandtabs(2)
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.expandtabs(tabsize=8)
+# Replaces tab character (\t) with spaces.
+# Tab expansion depends on current column position.
+# Default tab size is 8 spaces.
+
+tab_text = "Hello\tWorld"
+x = tab_text.expandtabs(4)
 print(x)
 
+
+# ---------------------------------------------------------------------------------------------------
 # 8. find()
-  # syntax
-    # string.find(substring, start, end)
-# find the first occurence of the text that we provide to the method it returns the index of the first occurence and it has two parameters start and end means that if we want we can find text in specific indexing or we can say area of our field
-x = message.find("welcome")
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.find(substring, start, end)
+# Returns lowest index of substring.
+# If substring is NOT found, returns -1.
+# Does NOT raise an exception.
+
+x = message.find("everyone")
 print(x)
 
+
+# ---------------------------------------------------------------------------------------------------
 # 9. format()
-  # syntax
-   # 1.  "string with {} placeholders".format(value1, value2)
-   # 2. "string with {name}".format(name=value)
-# it uses the curlly braces to store any value that we provid to the into format method with first come first surv basis so we need to know where the value need which value it is old style it has been replaced by f-strings now
-# it also has a equal to symbol to works as format_map except : we have = here it also works as the f-strings
-print(message.format(price = 49))
+# ---------------------------------------------------------------------------------------------------
+# Syntax: "string {}".format(value)
+# Used to insert values into placeholders {}.
+# Supports positional and named arguments.
 
+formatted = "The price is {} dollars".format(49)
+print(formatted)
+
+
+# ---------------------------------------------------------------------------------------------------
 # 10. format_map()
-  # syntax
-    # string.format_map(mapping)
-# it is similar to the format but it takes dictionary elements with key value pairs to be able to place at a placeholder and it works exactlly as f-strings
-name_dictionary = {"name" : "Shruti", "age" : 21}
-message2 = "Happy birthday {name} you are now on level {age}!"
-print(message2.format_map(name_dictionary))
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.format_map(dictionary)
+# Similar to format(), but takes a dictionary directly.
+# Placeholders must match dictionary keys.
 
+data = {"name": "Shruti", "age": 21}
+msg = "Happy birthday {name}, you are now level {age}!"
+print(msg.format_map(data))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 11. index()
-  # syntax
-    # string.index(substring, start, end)
-# it is exactlly similar to the find method instead of the program termination if the value is not found here we have value error that the value is not found
-x = message.index("welcome")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Syntax: string.index(substring, start, end)
+# Same as find(), but:
+# If substring is NOT found, it raises ValueError.
+# Always use safely when you're sure substring exists.
 
+if "everyone" in message:
+    print(message.index("everyone"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 12. isalnum()
-  # syntaxx
-    # string.isalnum()
-# it checks if the value in the string are all alphabets and numbers it shoud be not empty string then and then it gives the output to the console true unless it gives false output
-x = message.isalnum()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if all characters are alphanumeric (a-z, A-Z, 0-9).
+# No spaces allowed.
+# String must not be empty.
 
+print(message.isalnum())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 13. isalpha()
-  # syntax
-    # string.isalpha()
-# it checks if the string has contains alphabets only if it contains any element except alphabets including spaces it gives flase error and it must not be an empty string 
-x = message.isalpha()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if all characters are alphabets only.
+# Spaces or numbers cause False.
 
+print(message.isalpha())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 14. isascii()
-  # syntax
-    # string.isascii()
-# it checks if the text contains all the ascii characters if not then it gives error to the console saying false
-x = message.isascii()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if all characters are valid ASCII (0-127).
+# Never raises error.
 
+print(message.isascii())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 15. isdecimal()
-  # syntax
-    # string.isdecimal()
-# it checks if the all characters in the string are numbers if not then it gives error saying false
-x = message.isdecimal()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True only if all characters are decimal digits (0-9).
+# Very strict numeric check.
 
-# 16. isdigit() 
-  # syntax
-    # string.isdigit()
-# it is similar to the isdecimal but it is not much strikter than isdecimal it allows special digit characters like superscripts it prints true if it satisfyes each condition unless it prints false to the console
-x = message.isdigit()
-print(x)
+print("12345".isdecimal())
 
+
+# ---------------------------------------------------------------------------------------------------
+# 16. isdigit()
+# ---------------------------------------------------------------------------------------------------
+# Returns True if all characters are digits.
+# Allows superscripts and some special digit characters.
+
+print("12345".isdigit())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 17. isidentifier()
-  # syntax
-    # string.isidentifier()
-# so basiclly it checks and follwos the rule of the varialbe creation in an string if it follows all rules then and then it gives the true output else it gives false output
-x = message.isidentifier()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if string is a valid Python identifier.
+# Must follow variable naming rules:
+# - Cannot start with digit
+# - Cannot contain spaces
+# - No special characters except underscore
 
+print("variable_name".isidentifier())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 18. islower()
-  # syntax
-    # string.islower()
-# it works only on the letters with lowercase value if any value in the string are lowercase then the console gives false output for empty strings this gives error or false value 
-x = message.islower()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if:
+# - There is at least one alphabet character
+# - All alphabet characters are lowercase
+# Non-letter characters are ignored.
 
+print(message.lower().islower())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 19. isnumeric()
-  # syntax
-    # string.isnumeric()
-# it checks if the all the value of the strings are digits fractions or roman numerals if it's not then it gives error saying false
-x = message.isnumeric()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if all characters are numeric.
+# Includes fractions, Roman numerals, etc.
 
+print("12345".isnumeric())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 20. isprintable()
-  # syntax
-    # string.isprintable()
-# it checks whether the values of the string are all printable means that if it contains special characters which is know to compiler as the \n, \t etc then it gives error saying false
-x = message.isprintable()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns False if string contains non-printable characters like \n or \t.
 
+print(message.isprintable())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 21. isspace()
-  # syntax
-    # string.isspace()
-# it strictlly checks if the string contains only and only white spaces not that it also contains special charter which is known to compiler that creates white spaces like \n, \t, \r etc then it gives true unless it gives false if all conditions are not get satisfied
-x = message.isspace()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if string contains ONLY whitespace characters.
+# Includes space, \n, \t, \r etc.
 
+print("   ".isspace())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 22. istitle()
-  # syntax
-    # string.istitle()
-# it checks if the all word in the strings are starts with uppercase letters if does not satisfyies this condition then it gives error to the console saying false
-x = message.istitle()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if each word starts with uppercase letter
+# and remaining letters are lowercase.
 
-# 23. isupper() 
-  # syntax
-    # string.isupper()
-# it checks if all the letters in the strings are uppercase or not if not then the compiler prints the error saying false
-x = message.isupper()
-print(x)
+print(message.title().istitle())
 
+
+# ---------------------------------------------------------------------------------------------------
+# 23. isupper()
+# ---------------------------------------------------------------------------------------------------
+# Returns True if:
+# - At least one letter exists
+# - All letters are uppercase
+
+print(message.upper().isupper())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 24. join()
-  # syntax
-    # separator.join(iterable)
-# it joins the multiple collection of strings like list tuple or any string collection by a seperator to form a single individual string 
-ration_list = ["oil", "sugar", "peanuts", "soyachunks"]
-x = ",".join(ration_list)
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Syntax: separator.join(iterable)
+# Joins elements of iterable into single string.
+# Separator is placed between elements.
 
+items = ["oil", "sugar", "peanuts"]
+print(", ".join(items))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 25. ljust()
-  # syntax
-    # string.ljust(width, fillchar)
-# it specified the left justify means that the string can be justified to the left or in simple words we can add any characters to the left of the string this method has two parameters width and fillchar where width is the total length of the string after the method has been applied and fillchar is the parameter where we provide the symbol or any value that we want to add followed by the width that specified that how many times this symbol repeats to the left here is one condition occur that if the width of the string is less than the length of the string then the actual string gets printed  
-txt = "banana"
-x = txt.ljust(20)
-print(x, "is my favorite fruit.")
+# ---------------------------------------------------------------------------------------------------
+# Left justifies string.
+# Adds padding to right side to reach total width.
 
+txt = "banana"
+print(txt.ljust(15, "*"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 26. lower()
-  # syntax
-    # string.lower()
-# it converts all uppercase letter in a string to lowercase letter numbers and special symbols are not get affected
-x = message.lower()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Converts all uppercase letters to lowercase.
 
+print(message.lower())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 27. lstrip()
-  # syntax
-    # string.lstrip([chars])
+# ---------------------------------------------------------------------------------------------------
+# Removes characters from left side only.
+# Default removes whitespace.
 
 txt = "     banana     "
-x = txt.lstrip()
-print("of all fruits", x, "is my favorite")
+print(txt.lstrip())
 
-# 28. maketrans()
+
+# ---------------------------------------------------------------------------------------------------
+# 28. maketrans() + translate()
+# ---------------------------------------------------------------------------------------------------
+# maketrans() creates translation table.
+# translate() applies that mapping to string.
+
 txt = "Hello Sam!"
-mytable = str.maketrans("S", "P")
-print(txt.translate(mytable))
+table = str.maketrans("S", "P")
+print(txt.translate(table))
 
+
+# ---------------------------------------------------------------------------------------------------
 # 29. partition()
-x = message.partition("bananas")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Splits string into 3 parts:
+# (before separator, separator, after separator)
+# If separator not found:
+# returns (original_string, '', '')
 
+print(message.partition("everyone"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 30. replace()
-x = message.replace("bananas", "apples")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Replaces ALL occurrences unless count is specified.
+# Returns new string.
 
+print(message.replace("beginning", "start"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 31. rfind()
-x = message.rfind("casa")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Searches from right to left.
+# Returns highest index.
+# Returns -1 if not found.
 
+print(message.rfind("the"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 32. rindex()
-x = message.rindex("casa")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Same as rfind but raises ValueError if not found.
 
+if "the" in message:
+    print(message.rindex("the"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 33. rjust()
-txt = "banana"
-x = txt.rjust(20)
-print(x, "is my favorite fruit.")
+# ---------------------------------------------------------------------------------------------------
+# Right justifies string.
+# Adds padding to left side.
 
+print(txt.strip().rjust(15, "*"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 34. rpartition()
-txt = "I could eat bananas all day, bananas are my favorite fruit"
-x = txt.rpartition("bananas")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Splits at last occurrence of separator.
 
+sentence = "I like bananas and bananas are sweet"
+print(sentence.rpartition("bananas"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 35. rsplit()
-x = message.rsplit(", ")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Splits from right side.
+# maxsplit defines number of splits from right.
 
+print(message.rsplit(" ", 2))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 36. rstrip()
-txt = "     banana     "
-x = txt.rstrip()
-print("of all fruits", x, "is my favorite")
+# ---------------------------------------------------------------------------------------------------
+# Removes characters from right side only.
 
+msg2 = "hello123"
+print(msg2.rstrip("123"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 37. split()
-x = message.split()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Splits string into list.
+# Default separator is whitespace.
 
+print(message.split())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 38. splitlines()
-x = message.splitlines()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Splits string at line boundaries.
+# keepends=True keeps newline characters.
 
+multi = "Hello\nWorld"
+print(multi.splitlines())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 39. startswith()
-x = message.startswith("Hello")
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Returns True if string starts with specified prefix.
 
+print(message.startswith("This"))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 40. strip()
-txt = "     banana     "
-x = txt.strip()
-print("of all fruits", x, "is my favorite")
+# ---------------------------------------------------------------------------------------------------
+# Removes characters from both sides.
+# Default removes whitespace.
 
+print("   banana   ".strip())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 41. swapcase()
-x = message.swapcase()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Converts lowercase to uppercase and vice versa.
 
+print(message.swapcase())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 42. title()
-x = message.title()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Capitalizes first letter of each word.
 
+print(message.title())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 43. translate()
-#use a dictionary with ascii codes to replace 83 (S) with 80 (P):
-mydict = {83:  80}
-txt = "Hello Sam!"
-print(txt.translate(mydict))
+# ---------------------------------------------------------------------------------------------------
+# Dictionary-based translation using ASCII values.
 
+mapping = {83: 80}  # S -> P
+print("Hello Sam!".translate(mapping))
+
+
+# ---------------------------------------------------------------------------------------------------
 # 44. upper()
-x = message.upper()
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Converts all letters to uppercase.
 
+print(message.upper())
+
+
+# ---------------------------------------------------------------------------------------------------
 # 45. zfill()
-x = message.zfill(10)
-print(x)
+# ---------------------------------------------------------------------------------------------------
+# Pads zeros on the LEFT to reach total width.
+# If string length >= width, returns original string.
+
+print("25".zfill(5))
