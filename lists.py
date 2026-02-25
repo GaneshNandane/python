@@ -1,5 +1,6 @@
 # lists are the data type in python which can store multiple values inside one variable 
 # here values can be strings and numbers
+# lists are mutable means that we can change list contents or elements
 # syntax to define a valid list
         # list_name = [value_one, value_two, value_three, ..........]
 # list can be define by a list name followed by the assignment operator and squared brackets with each value seperated by quoma 
