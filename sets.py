@@ -85,3 +85,15 @@ print(my_set1.issuperset(my_set2))
 
 # if my_set1 and my_set2 have no common elements then the both sets are disjoint sets
 print(my_set1.isdisjoint(my_set2))
+
+# del is a keyword used to delete a set 
+del my_set3
+print(my_set3)
+
+# checking if items exist in the set or not 
+if "light" in my_set2:
+    print("light is present")
+else:
+    print("light is absent")
+
+
