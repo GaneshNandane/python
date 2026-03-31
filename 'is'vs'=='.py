@@ -17,7 +17,7 @@ b1 = [1, 2, 3, 5]
 print(a1 == b1)      # this always gives us output True because both the values are same in both the variables 
 print(a1 is b1)      # this always gives us output False because lists are mutable and it always allocates the memory address different for both the vaiables 
 
-# 'is' can be also used to check identity which has same address or identity 
+# 'is' can be also used to check identity which has same address or object 
 value = None
 if value is None:
     print("No value")
