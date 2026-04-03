@@ -13,8 +13,8 @@
 
 # Note: In this code, we are only discussing the default constructor
 
-class Person:
+class message:
     def __init__(self):
         print("This is the default constructor")
 
-p1 = Person()
+p1 = message()
