@@ -1,8 +1,14 @@
-# this is the simplest example which explains the class methods well 
-    # here in this example we have a game character according to the game character and level it has its own health bar
-    # here we can give the health to the character or it automatically calls the class method to calculate the character health itself
-    # here this class method can be shared to all characters of the class with it's own instance specifying each characters unique health bar 
-    # always return a object using cls
+# This is a simple example to explain class methods
+# In this example, we have a game character whose health depends on their level
+
+# We can either:
+# 1. Manually provide health while creating the object
+# 2. Or use a class method to calculate health automatically based on level
+
+# The class method is shared by all objects of the class
+# It uses 'cls' to create and return a new object of the class
+
+# Class methods are often used as alternative constructors
 
 class GameCharacter:
   Max_level = 100
