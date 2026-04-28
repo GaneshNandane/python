@@ -1,10 +1,13 @@
-# class variables and instance variables are the two most important concepts in python 
+# Class variables and instance variables are two important concepts in Python
 
-      # class variables 
-        # class variables are the variables that are shared by all the objects of the class
+# Class variables:
+# These are variables that are shared among all objects of a class.
+# They are defined inside the class but outside any methods.
 
-      # instance variables
-        # instance variables are the variables that has exclusive to its own objects 
+# Instance variables:
+# These are variables that belong to each object individually.
+# Each object has its own copy of instance variables.
+
 class Gamelevel:
   max_level = 5
   def __init__(self, player, level):
@@ -14,6 +17,6 @@ class Gamelevel:
     print(f"player is {self.player} and its level is {self.level}/{self.max_level}")
 
 player1 = Gamelevel("Aditya", 2)
-player2 = Gamelevel("vedant", )
+player2 = Gamelevel("vedant", 1)
 player1.playerinfo()
 player2.playerinfo()
