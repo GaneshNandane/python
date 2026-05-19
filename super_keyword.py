@@ -1,3 +1,11 @@
+# super() keyword is used to access methods and constructors of the parent class inside the child class. It is mainly used in inheritance for code reusability.
+    # Here:
+        # - Game is the parent class
+        # - Battle_Royale is the child class
+        
+        # The child class accesses the methods and constructor
+        # of the parent class using super()
+
 class Game:
   def __init__(self, game_name, player, health):
     self.game_name = game_name
