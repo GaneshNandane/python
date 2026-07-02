@@ -1,3 +1,5 @@
+# explaning the use of the class variable shared by all objects of the the class instance 
+
 class MyClass:
     Class_variable = 0
     
