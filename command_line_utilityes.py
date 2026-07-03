@@ -1,3 +1,13 @@
+# Downloading files from the web using the requests and argparse modules.
+
+# This program defines a function named download_file() that downloads a file from a given URL. If no output filename is provided, the program extracts
+# the filename from the URL by splitting the URL using the '/' separator and selecting the last element using the index [-1].
+
+# The requests.get() function sends an HTTP GET request to the specified URL. The parameter stream=True downloads the file in small chunks instead of
+# loading the entire file into memory at once. Each chunk (8 KB in this case) is written to the output file in binary mode ('wb').
+
+# The argparse module is used to create a command-line interface (CLI), allowing the user to specify the URL of the file and an optional output filename when
+# running the program from the terminal.
 import argparse
 import requests
 
