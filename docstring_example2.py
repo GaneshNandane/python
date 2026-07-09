@@ -1,3 +1,6 @@
+# documenting the function 
+
+# here we are writing the documentation of the add function 
 def add(num1, num2):
     """
     Add up two integer numbers
@@ -27,4 +30,7 @@ def add(num1, num2):
     0
     """
     return num1+num2
+
+# printing the value 
+print(add(2, 5))
    
