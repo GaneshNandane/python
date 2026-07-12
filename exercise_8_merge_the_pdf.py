@@ -1,6 +1,11 @@
+# automatic pdf merger and pdf crator 
+
+# from pypdf importing pdfreader for pdf content reading and importing pefwriter for the new pdf cration
 from pypdf import PdfReader, PdfWriter
+# importing os for the control 
 import os
 
+# creating a pdfwriter object 
 pdf_writer = PdfWriter()
 
 # Automatically find all PDF files in the current directory
