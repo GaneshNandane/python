@@ -1,3 +1,6 @@
+# defining the list of numbers and taking an user input for checking if the relative index has a value if the index is out of range then prints exception if not then prints try block 
+# and then prints finally block after execution of program whether whichever block is executed 
+
 def func1():
     try:
         l=[1, 5, 6, 7]
