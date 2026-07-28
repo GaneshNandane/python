@@ -4,4 +4,5 @@ def double(x):
 print(double(3))
 
 #lambda function to double the input
-lambda x:x*2
+double = lambda x:x*2
+print(double(3))
