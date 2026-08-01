@@ -1,3 +1,5 @@
+# this is the example of multiline strings 
+
 a=""" lorem ipsum dolor sit amet,
 consectetur adipiscing elit,
 sed do eiusmod tempor incididunt
