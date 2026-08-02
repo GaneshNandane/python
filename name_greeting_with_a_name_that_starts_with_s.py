@@ -1,4 +1,4 @@
-# code for the greeting of a person which name startswith s
+# simple code for the greeting the person who's name startswith s
 l = ["Soham", "Harry", "Ganesh", "Pooja"]
 for name in l:
     if(name.startswith("S")):
