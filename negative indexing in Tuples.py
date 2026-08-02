@@ -1,6 +1,0 @@
-country=("Spain", "Italy", "India", "England", "Germany",)
-print(country[-1])
-print(country[-2])
-print(country[-3])
-print(country[-4])
-print(country[-5])
