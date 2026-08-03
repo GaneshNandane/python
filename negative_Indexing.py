@@ -1,3 +1,6 @@
+# this is the simple example of the negative indexing in lists 
+# Note: negative indexing starts from right to left and rightmost element is -1
+
 colors=["Red", "Green", "Blue", "Yellow", "Green"]
       #  [-5]    [-4]    [-3]    [-2]      [-1]
 print(colors[-1])
