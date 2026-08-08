@@ -1,3 +1,6 @@
+# accepting marks and storing the marks in the list
+
+# defining an empty list 
 marks = []
 f1 = int(input("Enter marks here:"))
 marks.append(f1)
@@ -13,5 +16,9 @@ f6 = int(input("Enter marks here:"))
 marks.append(f6)
 f7 = int(input("Enter marks here:"))
 marks.append(f7)
+
+# sorting the marks 
 marks.sort()
+
+# printing the final list 
 print(marks)
