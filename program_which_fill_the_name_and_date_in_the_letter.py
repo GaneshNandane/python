@@ -8,4 +8,4 @@ print(letter)
 print(letter.replace("<|Name|>", "Ganesh"))
 
 # After filling the name and date in place of the <|Name|> and <|Date|>
-print(letter.replace("<|Name|>", "Ganesh").replace("<|Date|>", "24 september 2024"))
+print(letter.replace("<|Name|>", "Ganesh").replace("<|Date|>", "09 August 2026"))
