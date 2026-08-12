@@ -1,10 +1,13 @@
-# simple program to read the file contents and print that on to the console
+# Simple program to read the file contents and print them to the console
 
-# opening a file in read only mode so that no one unintatially override any content into the file which might be not good
-f=open('poem.py', 'r')
+# Opening the file in read-only mode to prevent accidentally modifying or overwriting its contents
+f = open('poem.py', 'r')
 
-# reading the file contents using read function and sotring the file content into the contents variable 
-contents=f.read()
+# Reading the file contents using the read() function and storing them in the contents variable
+contents = f.read()
 
-# printing the contents variable
+# Printing the contents of the file
 print(contents)
+
+# Closing the file
+f.close()
