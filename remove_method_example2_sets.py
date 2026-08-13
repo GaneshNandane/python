@@ -1,4 +1,5 @@
 # this is the simple example of remove method in set
+# Note: if the element is not present inside the set then it gives the key error on to the console
 
 # defining a set
 cities={"Tokyo", "Madrid", "Berlin", "Delhi", "Seoul"}
