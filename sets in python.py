@@ -1,0 +1,2 @@
+info = {"Carla", 19, False, 5.9, 19}
+print(info)
