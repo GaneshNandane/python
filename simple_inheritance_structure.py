@@ -1,3 +1,5 @@
+# simple program to define a inheritance structure 
+
 class Parent:
     def func1 (self):
         print("This function is in parent class.")
