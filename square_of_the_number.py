@@ -1,3 +1,6 @@
+# simple program for square of number
+
+# taking a input number
 a = int(input("Enter the number:"))
 print("The square of the number is:", a**2) # this is the standard use 
 print("The square of the number is:", a*a)
