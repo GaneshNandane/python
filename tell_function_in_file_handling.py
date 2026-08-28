@@ -1,3 +1,5 @@
+# simple program to know where is the current file pointer using tell function
+
 with open('file.txt','r') as f:
     #Read the first 10 bytes
     data=f.read(10)
